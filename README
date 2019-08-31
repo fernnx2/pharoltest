@@ -1,0 +1,16 @@
+### Test Application pharol
+
+## Installation
+
+* Clone this repository
+
+* Navigate to the project directory
+
+* Run `npm install` or `yarn` to instal the projects dependencies
+* create a `.env` file and copy the contents of the `.env.sample` file into it and supply the values for each variable
+
+```
+sh cp .env.sample .env
+```
+
+* Run `npm run dev` to start the app in development
