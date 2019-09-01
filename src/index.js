@@ -9,6 +9,15 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import helmet from 'helmet';
 import router from './routes';
+import mongoose from 'mongoose';
+
+//const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://fernnx2:ingeniero1995@cluster0-9zsud.mongodb.net/pharol?retryWrites=true&w=majority";
+mongoose.connect(uri,(err)=>{
+  if(err) throw err;
+  console.log("Database Connected!");
+})
+
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -77,6 +86,8 @@ app.use((err, req, res, next) => {
     status: false,
   });
 });
+
+
 
 // configure port and listen for requests
 const port = parseInt(process.env.NODE_ENV === 'test' ? 8378 : process.env.PORT, 10) || 8080;
